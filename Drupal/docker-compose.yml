@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  drupal:
+    image: drupal
+    ports:
+      - 80:80
+    volumes:
+      - nfs:/var/www/html/modules
+      - nfs:/var/www/html/profiles
+      - nfs:/var/www/html/themes
+      - nfs:/var/www/html/sites
+    restart: always
+    privileged: true
+
+volumes:
+  nfs:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=${NFS_IP},nfsvers=4,rw,nolock,soft
+      device: :/data
