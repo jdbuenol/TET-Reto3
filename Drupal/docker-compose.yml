@@ -1,22 +1,13 @@
-version: '3.9'
+version: '3.3'
 
 services:
   drupal:
-    image: drupal
+    image: drupal:latest
     ports:
       - 80:80
     volumes:
-      - nfs:/var/www/html/modules
-      - nfs:/var/www/html/profiles
-      - nfs:/var/www/html/themes
-      - nfs:/var/www/html/sites
+      - /home/ubuntu/nfs/modules:/var/www/html/modules
+      - /home/ubuntu/nfs/profiles:/var/www/html/profiles
+      - /home/ubuntu/nfs/themes:/var/www/html/theme
+      - /home/ubuntu/nfs/sites:/var/www/html/sites
     restart: always
-    privileged: true
-
-volumes:
-  nfs:
-    driver: local
-    driver_opts:
-      type: nfs
-      o: addr=${NFS_IP},nfsvers=4,rw,nolock,soft
-      device: :/data

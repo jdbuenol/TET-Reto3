@@ -8,6 +8,7 @@ services:
     privileged: true
     environment:
       - SHARED_DIRECTORY=/data
+      - PERMITTED="*.*.*.*"
     volumes:
       - /home/ubuntu/nfsshare:/data
     ports:
