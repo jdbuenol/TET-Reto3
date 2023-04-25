@@ -1,13 +1,14 @@
-version: '3.3'
+version: '3.1'
 
 services:
+
   drupal:
-    image: drupal:latest
+    image: drupal:8-apache
     ports:
       - 80:80
     volumes:
       - /home/ubuntu/nfs/modules:/var/www/html/modules
       - /home/ubuntu/nfs/profiles:/var/www/html/profiles
-      - /home/ubuntu/nfs/themes:/var/www/html/theme
+      - /home/ubuntu/nfs/themes:/var/www/html/themes
       - /home/ubuntu/nfs/sites:/var/www/html/sites
     restart: always
