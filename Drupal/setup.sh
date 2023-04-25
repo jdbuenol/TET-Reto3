@@ -1,6 +1,7 @@
+. ./host.sh
 apt install nfs-common
 mkdir /home/ubuntu/nfs
-mount -v 100.24.21.3:/ /home/ubuntu/nfs
+mount -v $host /home/ubuntu/nfs
 mkdir /home/ubuntu/nfs/modules
 mkdir /home/ubuntu/nfs/profiles
 mkdir /home/ubuntu/nfs/themes
