@@ -10,3 +10,4 @@ mkdir /home/ubuntu/nfs/sites/default/files
 cp ./default.settings.php /home/ubuntu/nfs/sites/default/default.settings.php
 cp ./default.settings.php /home/ubuntu/nfs/sites/default/settings.php
 chmod -R 777 /home/ubuntu/nfs
+docker compose up
